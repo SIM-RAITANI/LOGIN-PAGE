@@ -1,0 +1,84 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+
+}
+body{
+    height: 100vh;
+    width:100vw;
+    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)) ,url("aurora.jpg");
+    background-size: cover;
+    background-color: aqua;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    
+    
+}
+.card{
+    display: flex;
+    width:800px;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.header h1{
+    color:white;
+    padding:50px 0px;
+    font-size: 100px;
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+.header h1:hover{
+    color:transparent;
+    -webkit-text-stroke: 1px white;
+    transition: 1s;
+
+}
+.body{
+    width:600px;
+    background-color: white;
+    margin:20px 40px;
+    border-radius: 20px;
+    padding:30px;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    
+}
+input{
+    outline: none;
+    border:1px solid lightgrey;
+    border-radius: 10px;
+    padding:20px;
+    margin-top: 10px;
+}
+#email-id,#phone-no,#name,#aadhar{
+    display: none;
+    padding: 10px;
+    font-size: 14px;
+    color:rgb(236, 179, 35);
+}
+.submit{
+    padding:20px;
+    border: none;
+    border-radius: 20px;
+    cursor:pointer;
+    
+    background-color: rgb(243, 176, 9);
+    font-size: 20px;
+    color:white;
+    margin-top: 10px;
+
+}
+.submit:hover{
+    background-color: rgb(236, 179, 35);
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <h1>Aurora'24</h1>
+        </div>
+        <div class="body">
+            <h2>Register Now!</h2>
+            <form name="submit-to-google-sheet">
+                <input type="email" name="Email" placeholder="abc@gmail.com">
+                <span id="email-id">Enter a valid email-id!</span>
+                <input type="text" placeholder="Name" name="Name">
+                <span id="name">
+                    Enter your name!
+
+                </span>
+                <input type="text" placeholder="Mobile-no." name="Phone-no">
+                <span id="phone-no">
+                    Enter your phone-no!
+                </span>
+                <input type="text" placeholder="Aadhar-no." name="Aadhar-no">
+                <span id="aadhar">Enter a valid Aadhar-no!</span>
+                <button class="submit" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxr7V3dhxf6Sfbsq7_YL07p9-vtHJbdZcI8Rs4XrmvBcqeQO3juIPXT0yp-Uy0RrT9X/exec';
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response =>{
+                form.reset();
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+    
+</body>
+</html>
