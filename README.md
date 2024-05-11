@@ -4,6 +4,8 @@ I have created a simple login page for our annual cultural fest AURORA. The logi
 Follow the steps to integrate in your project:<br>
 Step-1 : Create a google sheet. Create desired column with the same name as used in input tag of form tag.<br>
 Step-2 : Go to "Extensions" and open Appscript. Paste this code:<br><br>
+
+
 var sheetName = 'Sheet1'
 var scriptProp = PropertiesService.getScriptProperties()
 
@@ -43,7 +45,9 @@ function doPost (e) {
   finally {
     lock.releaseLock()
   }
-}<br><br><br>
+}
+
+<br><br><br>
 
 Step-3: Run the following code in the Appscript. <br>
 Step-4:Deploy the project and generate project URL and paste it to JS .
