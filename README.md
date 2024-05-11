@@ -8,7 +8,6 @@ Step-2 : Go to "Extensions" and open Appscript. Paste this code:<br><br>
 
 var sheetName = 'Sheet1'
 var scriptProp = PropertiesService.getScriptProperties()
-
 function intialSetup () {
   var activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet()
   scriptProp.setProperty('key', activeSpreadsheet.getId())
@@ -35,13 +34,11 @@ function doPost (e) {
       .createTextOutput(JSON.stringify({ 'result': 'success', 'row': nextRow }))
       .setMimeType(ContentService.MimeType.JSON)
   }
-
   catch (e) {
     return ContentService
       .createTextOutput(JSON.stringify({ 'result': 'error', 'error': e }))
       .setMimeType(ContentService.MimeType.JSON)
   }
-
   finally {
     lock.releaseLock()
   }
