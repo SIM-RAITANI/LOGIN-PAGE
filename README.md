@@ -5,7 +5,7 @@ Follow the steps to integrate in your project:<br>
 Step-1 : Create a google sheet. Create desired column with the same name as used in input tag of form tag.<br>
 Step-2 : Go to "Extensions" and open Appscript. Paste this code:<br><br>
 
-
+<div>
 var sheetName = 'Sheet1'
 var scriptProp = PropertiesService.getScriptProperties()
 function intialSetup () {
@@ -43,6 +43,7 @@ function doPost (e) {
     lock.releaseLock()
   }
 }
+</div>
 
 <br><br><br>
 
